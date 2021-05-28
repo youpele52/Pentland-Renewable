@@ -1,0 +1,328 @@
+/*
+=============== 
+Variables
+===============
+*/
+:root {
+  --clr-bcg: hsl(212, 33%, 89%);
+  --clr-bcg: #dbf3ff;
+  --clr-font: #282c35;
+  --clr-the-blues: #1e8bfb;
+  --clr-the-green: #48c353;
+  --clr-black: #222;
+  /* --clr-primary: #d23669; */
+  --clr-primary: #007ef5;
+  --clr-normal-text: #282c35;
+  --clr-page-title: black;
+
+  --clr-footer-navbar: white;
+  --clr-sidebar: rgba(255, 255, 255, 0.97);
+
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+
+  /* for the borders around the img */
+  --clr-grey-8: hsl(210, 31%, 80%);
+  /* for dropdown menu */
+  --speed: 500ms;
+  --border-radius: 8px;
+  /* pre,next button  */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  /* project styling */
+  --mainSpacing: 0.3rem;
+  --smallWidth: 85vw;
+  --maxWidth: 40rem;
+  --fullWidth: 1170px;
+  --mainWhite: #fff;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --mainTransition: all 0.3s linear;
+  --mainBorderRadius: 0.25rem;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  background: var(--clr-bcg);
+  background: white;
+
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: var(--clr-normal-text);
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-normal-text);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+/* section */
+.section {
+  width: 90vw;
+  margin: 5rem auto;
+  max-width: var(--max-width);
+
+  position: relative;
+  min-height: 73vh;
+  /* min-height: calc(100vh - 5rem - 11rem); */
+  /* min-height: calc(100vh - 5rem - 9rem); */
+}
+
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+}
+/*
+=============== 
+Slider
+===============
+*/
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.title h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+.title span {
+  font-size: 0.85em;
+  /* color: var(--clr-primary-5); */
+  color: #1e8bfb;
+  margin-right: 1rem;
+  font-weight: 700;
+}
+.section-center {
+  margin: 0 auto;
+  margin-top: 4rem;
+  width: 80vw;
+  /* have to have a height */
+  /* since we set position to absolute in the article we need to set the height here */
+  height: 450px;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+.person-img {
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 4px solid var(--clr-grey-8);
+  box-shadow: var(--dark-shadow);
+}
+article h4 {
+  text-transform: uppercase;
+  /* color: var(--clr-primary-5); */
+  color: #1e8bfb;
+  margin-bottom: 0.25rem;
+}
+.title {
+  text-transform: capitalize;
+
+  margin-bottom: 0.75rem;
+  /* color: var(--clr-grey-3); */
+  color: var(--clr-page-title);
+}
+.text {
+  max-width: 35em;
+  margin: 0 auto;
+  margin-top: 2rem;
+  line-height: 2;
+  color: var(--clr-normal-text);
+}
+.icon {
+  font-size: 3rem;
+  margin-top: 1rem;
+  /* color: var(--clr-primary-5); */
+  color: #1e8bfb;
+}
+.prev,
+.next {
+  position: absolute;
+  top: 200px;
+  transform: translateY(-50%);
+  background: var(--clr-grey-5);
+  /* background: var(--clr-normal-text); */
+  color: white;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: grid;
+  place-items: center;
+  border-color: transparent;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.prev:hover,
+.next:hover {
+  /* background: var(--clr-primary-5); */
+  background: greenyellow;
+}
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+@media (min-width: 800px) {
+  .text {
+    max-width: 45em;
+  }
+  .prev,
+  .next {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+  }
+}
+article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: var(--transition);
+}
+article.activeSlide {
+  /* opacity changes to one ones the slide is active else it stays at 0 */
+  opacity: 1;
+  transform: translateX(0);
+}
+article.lastSlide {
+  transform: translateX(-100%);
+}
+article.nextSlide {
+  transform: translateX(100%);
+}
+
+.underline {
+  width: 5rem;
+  height: 0.1rem;
+  margin-bottom: 1.25rem;
+  background: var(--clr-the-blues);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a:hover {
+  color: greenyellow;
+}
+
+.page-100 {
+  min-height: calc(100vh - 10rem);
+  padding: 5rem 0;
+}
+.page {
+  min-height: calc(100vh - (20vh + 10rem));
+}
+.bg {
+  /* outline: 2px solid black; */
+  padding: 40rem;
+  background-image: url('./assets/img/solarpanel.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* background-size: cover; */
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  /* background-attachment: fixed; */
+}
+
+/* Effect */
+.statement {
+  transition: transform 1s ease-in-out;
+}
+
+.bg:hover .statement {
+  animation: down-to-up 1s ease-in-out backwards;
+}
+@keyframes down-to-up {
+  100% {
+    transform: translateY(0%);
+  }
+  /* 50% {
+    transform: translateY(145%);
+  } */
+  0% {
+    transform: translateY(290%);
+  }
+}
